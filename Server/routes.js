@@ -48,7 +48,7 @@ const requestHandler = (req,res)=>{
           });
         });
       }
-      if (fs.existsSync('message.txt')){
+      
         fs.readFile('message.txt', 'utf8',(err,data)=>{
             if (err) {
                 console.error(err);
@@ -57,6 +57,7 @@ const requestHandler = (req,res)=>{
                 res.write('<html>');
                 res.write('<head><title>Enter Message</title><head>');
                 res.write(`<h1>${data}</h1>`)
+                
                 res.write(
                 '<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>'
                 );
@@ -66,19 +67,8 @@ const requestHandler = (req,res)=>{
     
             
         })
-    }else{
-    res.write('<html>');
-    res.write('<head><title>Enter Message</title><head>');
-    res.write(
-    '<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>'
-    );
-    res.write('</html>');
-    return res.end();
     
-    }
-
 }
-
 module.exports = requestHandler;
 
 // module.exports={

@@ -1,0 +1,16 @@
+{
+  "name": "nodejs_basics",
+  "version": "1.0.0",
+  "description": "Basic Node.JS",
+  "main": "message.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./Server/message.js",
+    "start-server":"node ./Server/message.js"
+  },
+  "author": "Kamalesh",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
